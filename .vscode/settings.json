@@ -1,0 +1,17 @@
+{
+  "editor.formatOnSave": true,
+  "markdownlint.config": {
+    "MD025": false
+  },
+  "markdown.styles": [
+    ".vscode/styles/_tokens.css",
+    ".vscode/styles/_base.css",
+    ".vscode/styles/_content.css",
+    ".vscode/styles/_components.css",
+    ".vscode/styles/_callouts.css",
+    ".vscode/styles/_highlight.css"
+  ],
+  "files.exclude": {
+    "**/.git": false
+  }
+}

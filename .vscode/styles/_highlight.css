@@ -1,0 +1,197 @@
+/*
+  VS Code Markdown Preview Styles — Code Highlighting (highlight.js)
+
+  File: `_highlight.css`
+  Loaded: Yes (sixth) via `.vscode/settings.json` → `markdown.styles`
+
+  Purpose
+  - Colors highlight.js token classes (e.g. `.hljs-keyword`, `.hljs-string`) inside fenced code blocks.
+  - Includes `.vscode-light` overrides so the same rules work in light themes.
+
+  Section map (high level)
+  - Base token colors (dark/default)
+  - `.vscode-light` token overrides
+
+  Dependencies
+  - Uses palette variables like `--brazil-blue`, `--brazil-green` which currently come from `_tokens.css`.
+  - Also references `--text-dark-default`, `--text-light-default`, `--comment-dark`, `--comment-light`.
+    Those are currently defined in `scss/_tokens.scss` but NOT in `_tokens.css`.
+    If you want `_highlight.css` to fully apply, define those variables in `_tokens.css` or add fallbacks.
+
+  Recommended next step (optional)
+  - If you want this file to be fully self-contained at runtime, add fallbacks where variables are used, e.g.
+    `color: var(--text-dark-default, var(--md-fg));`
+    This is intentionally NOT done automatically here to avoid changing the visual output unexpectedly.
+
+  Notes
+  - Keep this strictly valid CSS. Any stray token can break parsing for a large block of selectors.
+*/
+
+.hljs {
+  color: var(--text-dark-default);
+}
+
+.hljs-keyword,
+.hljs-literal,
+.hljs-symbol,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-section {
+  color: var(--brazil-blue);
+}
+
+.hljs-link {
+  color: var(--brazil-blue);
+  text-decoration: underline;
+}
+
+.hljs-built_in,
+.hljs-type,
+.hljs-attr,
+.hljs-attribute,
+.hljs-builtin-name {
+  color: var(--brazil-green);
+}
+
+.hljs-number,
+.hljs-class,
+.hljs-string,
+.hljs-meta-string,
+.hljs-regexp,
+.hljs-template-tag {
+  color: var(--brazil-blue-light);
+}
+
+.hljs-subst,
+.hljs-function,
+.hljs-title,
+.hljs-params,
+.hljs-formula,
+.hljs-variable,
+.hljs-template-variable {
+  color: var(--text-dark-default);
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-doctag,
+.hljs-meta,
+.hljs-meta-keyword,
+.hljs-tag,
+.hljs-bullet,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: var(--comment-dark);
+  font-style: italic;
+}
+
+.hljs-doctag {
+  font-style: normal;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-addition {
+  background-color: var(--diff-inserted-bg);
+  color: var(--diff-inserted-text);
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: var(--diff-removed-bg);
+  color: var(--diff-removed-text);
+  display: inline-block;
+  width: 100%;
+}
+
+/* Light theme overrides */
+.vscode-light .hljs {
+  color: var(--text-light-default);
+}
+
+.vscode-light .hljs-keyword,
+.vscode-light .hljs-literal,
+.vscode-light .hljs-symbol,
+.vscode-light .hljs-name,
+.vscode-light .hljs-selector-tag,
+.vscode-light .hljs-section {
+  color: var(--brazil-yellow-light);
+}
+
+.vscode-light .hljs-link {
+  color: var(--brazil-blue-light);
+  text-decoration: underline;
+}
+
+.vscode-light .hljs-built_in,
+.vscode-light .hljs-type,
+.vscode-light .hljs-attr,
+.vscode-light .hljs-attribute,
+.vscode-light .hljs-builtin-name {
+  color: var(--brazil-green-light);
+}
+
+.vscode-light .hljs-number,
+.vscode-light .hljs-class,
+.vscode-light .hljs-string,
+.vscode-light .hljs-meta-string,
+.vscode-light .hljs-regexp,
+.vscode-light .hljs-template-tag {
+  color: var(--brazil-blue-light);
+}
+
+.vscode-light .hljs-subst,
+.vscode-light .hljs-function,
+.vscode-light .hljs-title,
+.vscode-light .hljs-params,
+.vscode-light .hljs-formula,
+.vscode-light .hljs-variable,
+.vscode-light .hljs-template-variable {
+  color: var(--text-light-default);
+}
+
+.vscode-light .hljs-comment,
+.vscode-light .hljs-quote,
+.vscode-light .hljs-doctag,
+.vscode-light .hljs-meta,
+.vscode-light .hljs-meta-keyword,
+.vscode-light .hljs-tag,
+.vscode-light .hljs-bullet,
+.vscode-light .hljs-selector-id,
+.vscode-light .hljs-selector-class,
+.vscode-light .hljs-selector-attr,
+.vscode-light .hljs-selector-pseudo {
+  color: var(--comment-light);
+  font-style: italic;
+}
+
+.vscode-light .hljs-doctag {
+  font-style: normal;
+}
+
+.vscode-light .hljs-emphasis {
+  font-style: italic;
+}
+
+.vscode-light .hljs-strong {
+  font-weight: bold;
+}
+
+.vscode-light .hljs-addition {
+  background-color: var(--diff-inserted-bg);
+  color: var(--diff-inserted-text);
+}
+
+.vscode-light .hljs-deletion {
+  background-color: var(--diff-removed-bg);
+  color: var(--diff-removed-text);
+}

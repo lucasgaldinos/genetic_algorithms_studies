@@ -1,0 +1,15 @@
+/*
+	VS Code Markdown Preview Styles — Index Placeholder
+
+	File: `index.css`
+	Loaded: No (not referenced by `.vscode/settings.json` → `markdown.styles`)
+
+	Purpose
+	- This file exists as a human-friendly “entrypoint” placeholder.
+	- Historically, it may have been used while experimenting with SCSS-style imports.
+
+	Notes / gotchas
+	- VS Code’s built-in Markdown Preview does NOT compile SCSS.
+	- Do not put SCSS directives such as `@use` / `@forward` / nesting into any `.css` file.
+	- The real load order is defined in `.vscode/settings.json` and documented in `README.md`.
+*/

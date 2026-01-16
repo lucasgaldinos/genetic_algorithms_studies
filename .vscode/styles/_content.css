@@ -1,0 +1,102 @@
+/*
+  VS Code Markdown Preview Styles — Content
+
+  File: `_content.css`
+  Loaded: Yes (third) via `.vscode/settings.json` → `markdown.styles`
+
+  Purpose
+  - Styles “content” elements that appear inside Markdown: lists, definition lists, details/summary, hr, mark, etc.
+  - Keeps these rules separate from `_base.css` so typography vs content behaviors stay easy to reason about.
+
+  Dependencies
+  - Relies on variables from `_tokens.css` (borders/backgrounds/foreground).
+
+  Notes
+  - This is plain CSS only; SCSS nesting must live under `scss/`.
+*/
+
+details {
+  border-radius: 6px;
+  background-color: var(--md-code-bg);
+  padding: 0.75rem;
+  margin: 0.9rem 0;
+  border: 1px solid var(--md-border);
+}
+
+details > summary {
+  cursor: pointer;
+  width: fit-content;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--md-border);
+  background-color: var(--md-inline-code-bg);
+  color: var(--md-fg);
+  margin: 0 0 0.5rem 0;
+}
+
+details > summary:empty::before {
+  content: "details";
+  font-style: italic;
+  color: var(--md-muted);
+}
+
+details > summary:hover {
+  border-color: var(--md-link);
+}
+
+/* Definition lists */
+dl {
+  max-width: 78ch;
+  margin: 0.9rem 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--md-border);
+  border-radius: 6px;
+}
+
+dl dt {
+  margin: 0.6rem 0 0.2rem;
+  font-weight: 650;
+}
+
+dl dt::after {
+  content: ":";
+}
+
+dl dd {
+  margin: 0 0 0.6rem 1.25rem;
+  color: var(--md-fg);
+}
+
+/* Lists */
+ol,
+ul {
+  max-width: 78ch;
+  padding-left: 1.25rem;
+  margin: 0.75rem 0;
+}
+
+ol li,
+ul li {
+  margin: 0.4rem 0;
+}
+
+ol { list-style-type: decimal; }
+
+mark {
+  background-color: rgba(255, 255, 0, 0.18);
+  color: inherit;
+  border-radius: 4px;
+  padding: 0.05em 0.2em;
+}
+
+hr {
+  margin: 2.5em auto;
+}
+
+hr.str {
+  background-color: var(--md-border);
+  border: none;
+  height: 2px;
+  width: 110%;
+  left: -5%;
+}

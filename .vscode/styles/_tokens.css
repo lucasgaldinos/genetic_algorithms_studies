@@ -1,0 +1,60 @@
+/*
+  VS Code Markdown Preview Styles — Tokens
+
+  File: `_tokens.css`
+  Loaded: Yes (first) via `.vscode/settings.json` → `markdown.styles`
+
+  Purpose
+  - Defines theme-aware CSS custom properties used by the rest of the Markdown Preview styles.
+  - Centralizes colors/backgrounds/borders so the other files can stay mostly “semantic”.
+
+  Notes / gotchas
+  - This MUST be plain CSS (no SCSS nesting, `@use`, etc.). VS Code’s Markdown Preview does not compile SCSS.
+  - Variables defined here are referenced heavily from `_base.css`, `_content.css`, `_components.css`, `_callouts.css`.
+  - `highlight.js` variables used by `_highlight.css` are NOT currently defined here; see `_highlight.css` header.
+*/
+
+:root {
+  /* Theme-aware defaults (calmer / less eye strain) */
+  --md-bg: var(--vscode-editor-background, #1e1e1e);
+  --md-fg: var(--vscode-editor-foreground, #d4d4d4);
+  --md-muted: var(--vscode-descriptionForeground, #9aa0a6);
+  --md-border: var(--vscode-panel-border, rgba(255, 255, 255, 0.12));
+
+  --md-link: var(--vscode-textLink-foreground, #4ea1ff);
+  --md-link-hover: var(--vscode-textLink-activeForeground, #8cc8ff);
+
+  --md-code-bg: var(--vscode-textCodeBlock-background, rgba(127, 127, 127, 0.15));
+  --md-inline-code-bg: var(--vscode-editorWidget-background, rgba(127, 127, 127, 0.12));
+  --md-inline-code-border: var(--vscode-editorWidget-border, rgba(255, 255, 255, 0.12));
+
+  --md-callout-bg: var(--vscode-textBlockQuote-background, rgba(127, 127, 127, 0.10));
+  --md-callout-border: var(--vscode-textBlockQuote-border, rgba(127, 127, 127, 0.35));
+
+  /* Keep your palette around for accents (optional) */
+  --brazil-green: #009b3a;
+  --brazil-yellow: #fedf00;
+  --brazil-blue: #002776;
+  --brazil-white: #ffffff;
+
+  --brazil-green-light: #00872e;
+  --brazil-yellow-light: #fbc02d;
+  --brazil-blue-light: #005bbb;
+  --brazil-white-light: #424242;
+
+  /* highlight.js helpers */
+  --diff-inserted-bg: var(--vscode-diffEditor-insertedTextBackground, rgba(0, 155, 58, 0.15));
+  --diff-removed-bg: var(--vscode-diffEditor-removedTextBackground, rgba(255, 0, 0, 0.15));
+  --diff-inserted-text: var(--brazil-green);
+  --diff-removed-text: #D32F2F;
+}
+
+:root {
+  --text-size: 14px;
+  --h1-font-size: 1.9em;
+  --h2-font-size: 1.6em;
+  --h3-font-size: 1.35em;
+  --h4-font-size: 1.2em;
+  --h5-font-size: 1.1em;
+  --h6-font-size: 1.0em;
+}
